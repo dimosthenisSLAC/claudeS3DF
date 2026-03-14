@@ -4,5 +4,7 @@ __pycache__/
 .env
 output-*.txt
 error-*.txt
+*.out
+*.err
 *.log
 .DS_Store
