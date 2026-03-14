@@ -1,0 +1,11 @@
+# Add this to your ~/.ssh/config
+# Usage: ssh s3df-iana (gets you directly to interactive node via bastion)
+
+Host s3df
+    Hostname s3dflogin-mfa.slac.stanford.edu
+    User dsokaras
+
+Host s3df-iana
+    Hostname iana
+    User dsokaras
+    ProxyJump s3df
