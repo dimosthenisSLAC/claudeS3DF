@@ -29,16 +29,26 @@ if torch.cuda.is_available():
     print(f"VRAM: {torch.cuda.get_device_properties(0).total_memory / 1e9:.1f} GB")
 
 # Test FAIRChem imports
-from fairchem.core import OCPCalculator
-from fairchem.core.models import model_name_to_local_file
-print("\nFAIRChem core imported successfully")
-print(f"OCPCalculator available: {OCPCalculator is not None}")
+import fairchem.core
+print(f"\nFAIRChem core version: {fairchem.core.__version__}")
+
+from fairchem.core import FAIRChemCalculator, pretrained_mlip
+print("FAIRChemCalculator imported successfully")
 
 # List available pretrained models
 from fairchem.core.common.registry import registry
-print("\nAvailable model architectures:")
-for name in sorted(registry.get_registry("model").keys()):
-    print(f"  - {name}")
+model_registry = registry.get_registry("model")
+if model_registry:
+    print(f"\nAvailable model architectures ({len(model_registry)}):")
+    for name in sorted(model_registry.keys()):
+        print(f"  - {name}")
+else:
+    print("\nModel registry empty (models loaded dynamically)")
+
+# Quick GPU tensor test
+x = torch.randn(100, 100, device="cuda")
+y = torch.matmul(x, x.T)
+print(f"\nGPU tensor test: {y.shape} on {y.device}")
 
 print("\n=== FAIRChem GPU Test PASSED ===")
 PYEOF
