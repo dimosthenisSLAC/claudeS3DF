@@ -1,8 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=test_pytorch
-#SBATCH --account=ssrl
+#SBATCH --account=ssrl:isaac
 #SBATCH --partition=ada
-#SBATCH --qos=normal
 #SBATCH --gres=gpu:1
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=32G
