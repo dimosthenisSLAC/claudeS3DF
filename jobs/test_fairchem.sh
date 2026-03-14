@@ -35,15 +35,9 @@ print(f"\nFAIRChem core version: {fairchem.core.__version__}")
 from fairchem.core import FAIRChemCalculator, pretrained_mlip
 print("FAIRChemCalculator imported successfully")
 
-# List available pretrained models
-from fairchem.core.common.registry import registry
-model_registry = registry.get_registry("model")
-if model_registry:
-    print(f"\nAvailable model architectures ({len(model_registry)}):")
-    for name in sorted(model_registry.keys()):
-        print(f"  - {name}")
-else:
-    print("\nModel registry empty (models loaded dynamically)")
+# Show what's available in fairchem.core
+print("\nFAIRChem core contents:")
+print([x for x in dir(fairchem.core) if not x.startswith("_")])
 
 # Quick GPU tensor test
 x = torch.randn(100, 100, device="cuda")
