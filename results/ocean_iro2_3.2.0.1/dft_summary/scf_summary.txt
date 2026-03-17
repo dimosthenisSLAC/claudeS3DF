@@ -1,0 +1,31 @@
+     total energy              =    -544.59009532 Ry
+     total energy              =    -544.59011508 Ry
+     total energy              =    -544.59009456 Ry
+     total energy              =    -544.59006993 Ry
+     total energy              =    -544.59007413 Ry
+     total energy              =    -544.59010814 Ry
+     total energy              =    -544.59010585 Ry
+     total energy              =    -544.59010724 Ry
+     total energy              =    -544.59011388 Ry
+     total energy              =    -544.59011513 Ry
+     total energy              =    -544.59011190 Ry
+     total energy              =    -544.59011028 Ry
+     Number of k-points >= 100: set verbosity='high' to print the bands.
+     the Fermi energy is    14.2134 ev
+!    total energy              =    -544.59011042 Ry
+     The total energy is F=E-TS. E is the sum of the following terms:
+     convergence has been achieved in  24 iterations
+     c_bands      :     98.81s CPU    101.11s WALL (      24 calls)
+     Called by c_bands:
+     PWSCF        :   2m12.22s CPU   2m15.63s WALL
+---
+Note: The following floating-point exceptions are signalling: IEEE_UNDERFLOW_FLAG IEEE_DENORMAL
+Note: The following floating-point exceptions are signalling: IEEE_UNDERFLOW_FLAG IEEE_DENORMAL
+Note: The following floating-point exceptions are signalling: IEEE_UNDERFLOW_FLAG IEEE_DENORMAL
+Note: The following floating-point exceptions are signalling: IEEE_UNDERFLOW_FLAG IEEE_DENORMAL
+Note: The following floating-point exceptions are signalling: IEEE_UNDERFLOW_FLAG IEEE_DENORMAL
+Note: The following floating-point exceptions are signalling: IEEE_UNDERFLOW_FLAG IEEE_DENORMAL
+Note: The following floating-point exceptions are signalling: IEEE_UNDERFLOW_FLAG IEEE_DENORMAL
+Note: The following floating-point exceptions are signalling: IEEE_UNDERFLOW_FLAG IEEE_DENORMAL
+Note: The following floating-point exceptions are signalling: IEEE_UNDERFLOW_FLAG IEEE_DENORMAL
+Note: The following floating-point exceptions are signalling: IEEE_UNDERFLOW_FLAG IEEE_DENORMAL

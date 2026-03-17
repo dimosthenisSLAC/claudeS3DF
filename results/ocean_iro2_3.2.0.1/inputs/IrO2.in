@@ -1,0 +1,164 @@
+#######################################################
+# CONTROL CARDS
+# The pseudopotentials are in the main run directory
+#ppdir {'../'}
+# Select to run the OBF version 
+dft qe
+opf.program hamann
+dft.functional XC-000I-000I-000I-000I-645L-642L
+# Set this
+para_prefix{ mpirun -n 32 --mca btl self,vader --mca pml ob1 }
+
+# Legacy, must be here for now and should be 1
+#control 0
+
+#######################################################
+# STRUCTURAL INFORMATION CARDS
+# ABINIT style crystallographic info
+#scaling (in Bohr) for the primitive vectors in the unit cell
+acell { 8.578770824150515 8.578770824150515 6.024768055978138 }
+# primitive vectors for defining the unit cell
+rprim {
+1.0 0.0 0.0
+0.0 1.0 0.0
+0.0 0.0 1.0
+}
+
+ntypat 2
+znucl { 77 8 }
+
+natom 6
+typat { 1  1  2  2  2  2}
+
+xred{  
+     0.000000000         0.000000000         0.000000000
+     0.500000000         0.500000000         0.500000000
+     0.308510005         0.308510005         0.000000000
+     0.691489995         0.691489995         0.000000000
+     0.191479996         0.808520019         0.500000000
+     0.808520019         0.191479996         0.500000000
+}
+
+#diemac 10000
+diemac 93.8471
+#diemac 5
+#diemac 1246.22357430234
+
+####################################################
+########### DFT Parameters
+#pp_database ONCVPSP-PBEsol-PDv0.4-standard
+#pp_database ONCVPSP-PBE-PDv0.4-stringent
+pp_database ONCVPSP-PBE-PDv0.4-stringent
+
+ecut.quality high
+
+# CONVERGENCE PARAMETERS
+# maximum plane wave energy (in Ryd) for truncating the basis. Convergence respect to the ground state energy should be checked
+ecut 120
+
+# SCF Mixing
+mixing {0.2}
+
+# SCF Energy tolerance
+toldfe 1.1d-8
+
+# SCF wftol
+tolwfr 1.1d-16
+
+# SCF iterations
+nstep 250
+
+degauss 0.001
+
+# k-point sampling for ground states calculation, density convergence must be checked
+#ngkpt { 8 8 10 }
+ngkpt -10.5
+# k-point sampling for final states calculation, if not here will use defaults (could be higher)
+#nkpt { 8 8 10 }
+nkpt -12.7
+
+# Number of bands for final states to use (includes valence but not core states)
+dft_energy_range 70
+#nbands 185
+
+# Number of bands to use for the screening calculation (could be higher)
+screen_energy_range 180
+#screen.nbands 604
+
+occopt 3
+#occopt 1
+
+# k-point sampling for calculating W (# Because we are interested in a limited region of real-space
+#  2x2x2 is good enough almost always
+#screen.nkpt{ 2 2 2 }
+screen.nkpt{ -2.4 }
+
+#screen.augment .false.
+#cnbse.strength 0.5
+#dft.diagonalization {ppcg}
+#####################################################
+############ Atomic and Screening info
+#opf.hfkgrid{2000 30}
+
+#edge information
+# number of edges to run
+# nedges 2
+# edge_label n l    edge_label must be the same as in XRED
+# -8 1 0
+# -77 2 1
+edges{
+ -77 2 1
+}
+
+# radius for paw reconstruciton
+screen.shells{ 9.5 }
+cnbse.rad{ 9.5 }
+
+#Scaling Factor
+scfac 0.60
+#####################################################
+############ BSE Parameters
+
+# Real-space sampling for calcualting the action of W on a wave function
+#cnbse.xmesh{ 9  9  7 }
+cnbse.xmesh -1.66
+
+metal .true.
+
+#####################################################
+############ Spectrum information
+
+# spectral broadening in Hartree
+#cnbse.broaden{ 5.25 , 1.86 }
+#cnbse.broaden{ 0.2 }
+# Ir L3-edge
+cnbse.broaden{ 0.93 }
+cnbse.spect_range{ 4000 -350 -100 }
+#spin_orbit 0
+
+#   OCEAN only supports lda+u for qe
+#ldau{
+#lda_plus_u=.true. , Hubbard_U(1)=4
+#} 
+
+# ref. Last Ir Metal calc
+# DFT
+# Ir L3edge
+core_offset -55.7922759096051
+#core_offset .true.
+
+#### SCREENING SETTINGS
+screen.final.dr 0.02
+screen.grid.rmax 14
+screen.grid.rmode { lagrange uniform }
+screen.grid.ang { 5 13 15 9 7 7 7 }
+screen.grid.deltar { 0.10 0.15 0.25 0.25 0.25 0.5 0.5 }
+screen.grid.shells { -1 4 6 8 10 12 14 }
+screen.lmax 2
+
+### EXCITON CALCULATION SETTINGS
+#cnbse.solver gmres
+#cnbse.gmres.elist{ 
+#-237.7
+#-237.9 }
+#echamp .true.
