@@ -10,8 +10,8 @@ import glob
 
 # Directories
 oscar_dir = os.path.expanduser("~/IrO2_example/Oscar_Output")
-s3df_310_dir = os.path.expanduser("~/claudeS3DF/results/ocean_iro2_3.1.0")
-s3df_321_dir = os.path.expanduser("~/claudeS3DF/results/ocean_iro2_3.2.0.1")
+s3df_310_dir = os.path.expanduser("~/claudeS3DF/results/ocean_iro2_3.1.0/spectra")
+s3df_321_dir = os.path.expanduser("~/claudeS3DF/results/ocean_iro2_3.2.0.1/spectra")
 out_dir = os.path.expanduser("~/claudeS3DF/results")
 
 # L-edge labels: 2p_01 = L3 (2p3/2), 2p_02 = L2 (2p1/2), 2p_03 = L1 (2s)
