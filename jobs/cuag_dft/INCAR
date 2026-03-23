@@ -1,0 +1,31 @@
+SYSTEM = Cu-Ag alloy CO adsorption (RPBE, matches CatHub)
+
+# Electronic
+ENCUT  = 450
+EDIFF  = 1E-6
+ISMEAR = 0
+SIGMA  = 0.1
+ALGO   = Normal
+NELM   = 200
+PREC   = Normal
+
+# Functional: RPBE to match CatHub reference data
+GGA    = RP
+
+# Ionic relaxation
+IBRION = 2
+NSW    = 200
+ISIF   = 2
+EDIFFG = -0.03
+
+# Non-magnetic (Cu, Ag are non-magnetic)
+ISPIN  = 1
+
+# Performance
+LREAL  = Auto
+NPAR   = 4
+LORBIT = 11
+
+# Output
+LWAVE  = .FALSE.
+LCHARG = .FALSE.
