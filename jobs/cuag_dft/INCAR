@@ -23,7 +23,7 @@ ISPIN  = 1
 
 # Performance
 LREAL  = Auto
-NPAR   = 4
+
 LORBIT = 11
 
 # Output

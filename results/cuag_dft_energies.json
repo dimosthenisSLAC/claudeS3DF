@@ -1,0 +1,32 @@
+{
+  "CO_gas": {
+    "E_eV": -14.427835
+  },
+  "Cu3Ag_111": {
+    "E_slab_CO": -58.24995,
+    "E_slab_clean": -43.332062,
+    "E_ads": -0.490053
+  },
+  "CuAg_111": {
+    "E_slab_CO": -53.807065,
+    "E_slab_clean": -39.006906,
+    "E_ads": -0.372323
+  },
+  "CuAg3_111": {
+    "E_slab_CO": -50.245792,
+    "E_slab_clean": -35.450745,
+    "E_ads": -0.367212
+  },
+  "Cu_Ag_interface": {
+    "E_slab_CO": -96.468734,
+    "E_slab_clean": -81.585347,
+    "E_ads": -0.455552
+  },
+  "Ag_111_2CO": {
+    "E_slab_2CO": -102.615596,
+    "E_slab_clean": -74.061807,
+    "E_ads_2CO": 0.301881,
+    "E_ads_per_CO": 0.150941,
+    "E_ads_differential": 0.301881
+  }
+}
