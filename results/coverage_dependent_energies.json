@@ -1,0 +1,47 @@
+{
+  "CO_gas_eV": -14.42783526,
+  "slab_energies": {
+    "Cu100_clean": -108.079942,
+    "Cu100_1CO": -123.050571,
+    "Cu100_2CO": -138.060421,
+    "Cu100_4CO": -167.416004,
+    "Cu100_6CO": -195.017549,
+    "Cu100_8CO": -221.66754
+  },
+  "differential_binding": {
+    "theta_0.11": -0.542794,
+    "theta_0.22": -0.582014,
+    "theta_0.44": -0.249957,
+    "theta_0.67": 0.627063,
+    "theta_0.89": 1.10284
+  },
+  "OCCO_energies": {
+    "Cu100_OCCO_0spec": -131.584005,
+    "Cu100_OCCO_2spec": -161.521845,
+    "Cu100_OCCO_4spec": -189.888354,
+    "Cu100_OCCO_6spec": -218.695133
+  },
+  "OCCO_formation": {
+    "theta_0.22": 6.476416,
+    "theta_0.44": 5.894159,
+    "theta_0.67": 5.129195,
+    "theta_0.89": 2.972408
+  },
+  "convergence_notes": {
+    "converged": [
+      "Cu100_clean",
+      "Cu100_1CO",
+      "Cu100_2CO",
+      "Cu100_6CO"
+    ],
+    "not_converged": [
+      "Cu100_4CO",
+      "Cu100_8CO",
+      "Cu100_OCCO_0spec",
+      "Cu100_OCCO_2spec",
+      "Cu100_OCCO_4spec",
+      "Cu100_OCCO_6spec"
+    ],
+    "note": "Unconverged systems hit NSW=300 limit. Energies still drifting by 1-50 meV. Usable for trends but approximate."
+  }
+}
