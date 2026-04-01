@@ -8,3 +8,10 @@ error-*.txt
 *.err
 *.log
 .DS_Store
+
+# VASP large binary files
+WAVECAR
+CHG
+CHGCAR
+vasprun.xml
+PROCAR

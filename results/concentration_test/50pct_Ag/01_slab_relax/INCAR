@@ -1,0 +1,31 @@
+# Cu-Au(111) slab relaxation — PBE+D3, matching Xu 2026
+SYSTEM = Cu-Au(111) 4x4 slab relaxation
+
+# Electronic
+ENCUT = 400
+EDIFF = 1E-5
+ISMEAR = 1
+SIGMA = 0.1
+LREAL = Auto
+PREC = Normal
+ALGO = Normal
+
+# Ionic relaxation
+NSW = 200
+IBRION = 2
+EDIFFG = -0.02
+ISIF = 2          # Relax ions only, fix cell
+
+# Dispersion
+IVDW = 12         # DFT-D3 (BJ damping)
+
+# Spin
+ISPIN = 1         # Non-spin-polarized
+
+# DOS for later d-band analysis
+LORBIT = 11
+
+# Performance
+NCORE = 4
+LWAVE = .TRUE.
+LCHARG = .TRUE.
